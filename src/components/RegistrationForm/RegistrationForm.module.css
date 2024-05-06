@@ -1,0 +1,47 @@
+.layout {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+}
+
+.formContainer {
+  min-width: 745px;
+  max-height: 944px;
+
+  background-color: #fff;
+
+  margin-left: 40px;
+  border-radius: 20px;
+  padding: 31px 45px 33px;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+
+  margin: 0 0 27px;
+}
+
+.formTabs {
+  list-style: none;
+  
+  display: flex;
+  flex-direction: column;
+  row-gap: 39px;
+
+  padding: 0;
+}
+
+.formTabTitle {
+  font-size: 28px;
+  font-weight: 700;
+  
+  margin: 0 0 18px;
+}
+
+.aboutContainer {
+  display: grid;
+}
