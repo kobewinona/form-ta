@@ -1,7 +1,10 @@
 import React from 'react';
 
+import InputTypeText from '../ui/InputTypeText/InputTypeText';
+import InputTypeSelect from '../ui/InputTypeSelect/InputTypeSelect';
+
 import styles from './RegistrationForm.module.css';
-import Label from '../ui/Label/Label';
+import InputTypeDate from '../ui/InputTypeDate/InputTypeDate';
 
 const RegistrationForm = () => {
   return (
@@ -12,18 +15,31 @@ const RegistrationForm = () => {
           <li>
             <h2 className={styles.formTabTitle}>О себе</h2>
             <div className={styles.aboutContainer}>
-              <Label id="fullName" label="ФИО" required>
-                <input name="fullName" type="text" required />
-              </Label>
-              <Label id="gender" label="Пол" required>
-                <select id="gender" required>
-                  <option value="male">Мужской</option>
-                  <option value="female">Женский</option>
-                </select>
-              </Label>
-              <Label id="birthdate" label="Дата рождения" required>
-                <input id="birthdate" type="date" required />
-              </Label>
+              <InputTypeText
+                name="fullName"
+                label="ФИО"
+                placeholder="Введите ФИО"
+                extraClass={styles.fullNameBg}
+                minLength={3}
+                required
+              />
+              <div className={styles.twoInputsContainer}>
+                <InputTypeSelect
+                  name="gender"
+                  label="Пол"
+                  options={[
+                    { value: 'male', label: 'Мужской' },
+                    { value: 'female', label: 'Женский' }
+                  ]}
+                  placeholder="Выберите пол"
+                  required
+                />
+                <InputTypeDate
+                  name="birthdate"
+                  label="Дата рождения"
+                  required
+                />
+              </div>
             </div>
           </li>
           <li>

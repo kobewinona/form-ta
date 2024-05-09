@@ -7,12 +7,14 @@
 }
 
 .formContainer {
-  min-width: 745px;
+  width: 100%;
+  max-width: 745px;
   max-height: 944px;
+  box-sizing: border-box;
 
   background-color: #fff;
 
-  margin-left: 40px;
+  margin: 0 40px;
   border-radius: 20px;
   padding: 31px 45px 33px;
 }
@@ -44,4 +46,16 @@
 
 .aboutContainer {
   display: grid;
+}
+
+.fullNameBg {
+  background-color: rgba(217, 217, 217, 0.15);
+}
+
+.twoInputsContainer {
+  width: 100%;
+  
+  display: flex;
+  justify-content: space-between;
+  column-gap: 14px;
 }
