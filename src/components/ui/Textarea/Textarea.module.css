@@ -1,0 +1,23 @@
+.layout {
+  width: 100%;
+  min-height: 114px;
+  
+  font-size: 12px;
+  
+  resize: none;
+}
+
+.layout::placeholder {
+  font-size: 12px;
+  font-weight: 200;
+}
+
+@media (min-width: 768px) {
+  .layout {
+    font-size: 16px;
+  }
+  
+  .layout::placeholder {
+    font-size: 16px;
+  }
+}

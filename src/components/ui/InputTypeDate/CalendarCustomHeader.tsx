@@ -29,6 +29,7 @@ const CalendarCustomHeader: FC<CalendarCustomHeaderProps> = ({
     <div className={styles.layout}>
       <button
         className={arrowLeftClasses}
+        type="button"
         onClick={decreaseMonth}
         disabled={prevMonthButtonDisabled}
       />
@@ -37,6 +38,7 @@ const CalendarCustomHeader: FC<CalendarCustomHeaderProps> = ({
       </span>
       <button
         className={arrowRightClasses}
+        type="button"
         onClick={increaseMonth}
         disabled={nextMonthButtonDisabled} />
     </div>

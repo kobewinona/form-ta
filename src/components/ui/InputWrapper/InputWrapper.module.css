@@ -1,21 +1,29 @@
 .layout {
   width: 100%;
   
-  font-size: 22px;
+  font-size: 16px;
+  
+  margin-bottom: 1px;
 }
 
-.layout input,
+.layout input, textarea,
 :global(html, .react-select__control) {
   width: 100%;
   box-sizing: border-box;
   
-  font-size: 16px;
+  font-size: 12px;
   
   outline: none;
-  margin: 5px auto;
+  margin: 0 auto;
   border: 1px solid rgba(0, 0, 0, .2);
   border-radius: 5px;
-  padding: 19px 28px;
+  padding: 13px 16px;
+}
+
+:global(html, .react-select__control):hover {
+  outline: none;
+  box-shadow: none;
+  border: 1px solid rgba(0, 0, 0, .2);
 }
 
 :global(html, .react-select__control--is-focused) {
@@ -23,17 +31,21 @@
   border-color: rgba(0, 0, 0, 0.2);
 }
 
-:global(html, .react-select__control:hover) {
-  border-color: rgba(0, 0, 0, 0.2);
-}
-
-.layoutOnError input {
+.layoutOnError input,
+.layoutOnError :global(.react-select__control) {
   border-color: #ff275b;
 }
 
-.layout input::placeholder {
-  font-size: 16px;
+.layoutOnError :global(.react-select__control):hover {
+  border-color: #ff275b;
+}
+
+.layout input::placeholder,
+:global(.react-select__placeholder) {
+  font-size: 12px;
   font-weight: 200;
+  
+  margin: 0;
 }
 
 .requiredLabel {
@@ -49,6 +61,32 @@
   
   font-family: 'Inter', Tahoma, sans-serif;
   color: #ff275b;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 200;
+  
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .layout {
+    font-size: 22px;
+  }
+  
+  .layout input::placeholder,
+  :global(.react-select__placeholder) {
+    font-size: 16px;
+  }
+  
+  .layout input, textarea,
+  :global(html, .react-select__control) {
+    font-size: 16px;
+    
+    padding: 18px 28px;
+  }
+  
+  .errorMessage {
+    font-size: 16px;
+    
+    margin-top: 3px;
+  }
 }

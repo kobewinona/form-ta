@@ -25,9 +25,11 @@ const InputWrapper: FC<InputWrapperProps> = ({
       {label && label}
       {required && <span className={styles.requiredLabel}>*</span>}
       {children}
-      <span className={styles.errorMessage}>
-        {inputErrorMessage && inputErrorMessage}
-      </span>
+      {inputErrorMessage && (
+        <span className={styles.errorMessage}>
+          {inputErrorMessage}
+        </span>
+      )}
     </label>
   );
 };

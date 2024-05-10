@@ -2,6 +2,27 @@
   width: 100%;
 }
 
+:global(.react-datepicker__input-container:after) {
+  content: '';
+  
+  width: 20px;
+  height: 20px;
+  
+  cursor: pointer;
+  
+  background-image: url('../../../images/calendar.svg');
+  background-size: auto;
+  background-repeat: no-repeat;
+  background-position: center;
+  
+  position: absolute;
+  
+  top: 50%;
+  right: 16px;
+  
+  transform: translate(0, -50%);
+}
+
 :global(.react-datepicker-popper) {
   top: -1.5%;
   left: -2%;
@@ -100,4 +121,10 @@
 
 :global(.react-datepicker__day--outside-month) {
   color: #a6acb3;
+}
+
+@media (min-width: 768px) {
+  :global(.react-datepicker__input-container:after) {
+    right: 28px;
+  }
 }

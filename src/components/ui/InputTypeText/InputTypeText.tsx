@@ -1,4 +1,5 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect } from 'react';
+import { useFormContext } from 'react-hook-form';
 
 import InputWrapper from '../InputWrapper/InputWrapper';
 
@@ -16,19 +17,12 @@ const InputTypeText: FC<InputTypeTextProps> = ({
   required = false,
   ...inputHTMLAttributes
 }) => {
-  const [inputValue, setInputValue] = useState<string>('');
-  const [inputErrorMessage, setInputErrorMessage] = useState<string>('');
+  const { register, formState: { errors } } = useFormContext();
+  const inputErrorMessage = errors[name]?.message as string;
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const target = e.target;
-
-    setInputValue(target.value);
-    if (target.validationMessage) {
-      setInputErrorMessage(target.validationMessage);
-    } else {
-      setInputErrorMessage('');
-    }
-  }
+  useEffect(() => {
+    console.log('inputErrorMessage', inputErrorMessage);
+  }, [inputErrorMessage]);
 
   return (
     <>
@@ -40,10 +34,9 @@ const InputTypeText: FC<InputTypeTextProps> = ({
         <input
           className={extraClass}
           id={name}
-          name={name}
           type="text"
-          onChange={handleChange}
-          value={inputValue}
+          required={required}
+          {...register(name)}
           {...inputHTMLAttributes}
         />
       </InputWrapper>

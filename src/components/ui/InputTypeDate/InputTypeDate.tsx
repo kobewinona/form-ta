@@ -1,48 +1,61 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect } from 'react';
 import DatePicker from 'react-datepicker';
+import { useFormContext } from 'react-hook-form';
 import "react-datepicker/dist/react-datepicker.css";
 import { registerLocale, setDefaultLocale } from 'react-datepicker';
 import ru from 'date-fns/locale/ru';
 
+import InputWrapper from '../InputWrapper/InputWrapper';
+
+import CalendarCustomHeader from './CalendarCustomHeader';
+import './InputTypeDate.module.css';
+
 registerLocale('ru', ru);
 setDefaultLocale('ru');
-
-import InputWrapper from '../InputWrapper/InputWrapper';
-import CalendarCustomHeader from './CalendarCustomHeader';
-
-import './InputTypeDate.module.css';
 
 interface InputTypeDateProps {
   name: string;
   label?: string;
-  startDate?: string;
+  placeholder?: string;
   required?: boolean;
 }
 
 const InputTypeDate: FC<InputTypeDateProps> = ({
   name,
   label,
-  startDate= '00.00.0000',
+  placeholder= '',
   required = false
 }) => {
-  const [selectedDate, setSelectedDate] = useState<Date | null>(null);
+  const {
+    register,
+    setValue,
+    watch,
+    formState: { errors } } = useFormContext();
+  const selectedDate = watch(name);
+  const inputErrorMessage = errors[name]?.message as string;
+
   const handleChange = (date: Date | null) => {
-    setSelectedDate(date);
+    setValue(name, date, { shouldValidate: true });
   };
+
+  useEffect(() => {
+    register(name);
+  }, [register, name]);
 
   return (
     <InputWrapper
       required={required}
       label={label}
-      // inputErrorMessage={inputErrorMessage}
+      inputErrorMessage={inputErrorMessage}
     >
       <DatePicker
         name={name}
         selected={selectedDate}
         dateFormat="dd.MM.yyyy"
-        // formatWeekDay={formatWeekDay}
         onChange={handleChange}
-        placeholderText={startDate}
+        placeholderText={placeholder}
+        maxDate={new Date()}
+        required={required}
         renderCustomHeader={({
           date,
           decreaseMonth,

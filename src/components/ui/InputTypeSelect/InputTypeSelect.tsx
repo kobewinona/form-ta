@@ -1,8 +1,10 @@
-import React, { FC, useState } from 'react';
+import React, { FC } from 'react';
+import { useFormContext } from 'react-hook-form';
 import Select from 'react-select';
 
 import InputWrapper from '../InputWrapper/InputWrapper';
 
+import DropdownIndicator from './DropdownIndicator';
 import styles from './InputTypeSelect.module.css';
 
 interface Option {
@@ -25,15 +27,19 @@ const InputTypeSelect: FC<InputTypeSelectProps> = ({
   placeholder= '',
   required = false,
 }) => {
-  const [inputOption, setInputOption] = useState<Option | null>(null);
-  const [inputErrorMessage, setInputErrorMessage] = useState<string>('');
+  const {
+    register,
+    setValue,
+    formState: { errors } } = useFormContext();
+  const inputErrorMessage = errors[name]?.message as string;
 
-  const handleChange = (option: { value: string; label: string } | null) => {
-    if (!option) {
-      setInputErrorMessage('must be filled');
-    }
-    setInputOption(option);
-  }
+  const handleChange = (option: Option | null) => {
+    setValue(name, option?.value || '', { shouldValidate: true });
+  };
+
+  React.useEffect(() => {
+    register(name);
+  }, [register, name]);
 
   return (
     <InputWrapper
@@ -42,16 +48,18 @@ const InputTypeSelect: FC<InputTypeSelectProps> = ({
       inputErrorMessage={inputErrorMessage}
     >
       <Select
+        inputId="my-custom-input-id"
+        classNamePrefix="react-select"
         name={name}
         options={options}
         placeholder={placeholder}
         onChange={handleChange}
-        classNamePrefix="react-select"
-        value={inputOption}
+        required={required}
         styles={styles}
         components={{
           IndicatorSeparator: () => null,
-        }}
+          DropdownIndicator: DropdownIndicator
+      }}
       />
     </InputWrapper>
   );

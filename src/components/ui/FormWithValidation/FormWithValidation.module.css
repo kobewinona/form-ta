@@ -1,0 +1,42 @@
+.submitBtn {
+  width: 100%;
+  max-width: none;
+  min-height: 56px;
+  box-sizing: border-box;
+  
+  cursor: pointer;
+  
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 130%;
+  
+  background-color: #000;
+  opacity: 1;
+  
+  display: block;
+  
+  margin: 19px auto 0;
+  border: none;
+  border-radius: 6px;
+  padding: 18px 50px;
+  
+  transition: all 0.2s ease-in-out;
+}
+
+.submitBtn:hover {
+  color: #fff;
+  
+  background-color: #000;
+  
+  opacity: .8;
+  
+  transition: opacity 0.2s ease-in-out;
+}
+
+@media (min-width: 768px) {
+  .submitBtn {
+    max-width: max-content;
+  }
+}

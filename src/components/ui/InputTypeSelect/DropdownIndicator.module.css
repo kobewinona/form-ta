@@ -1,0 +1,19 @@
+:global(html, .react-select__indicator) {
+  padding: 0;
+}
+
+.layout {
+  width: 14px;
+  height: 14px;
+  
+  cursor: pointer;
+  
+  background-image: url('../../../images/select-indicator.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+.arrowUp {
+  transform: rotate(-180deg);
+}
