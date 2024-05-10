@@ -14,7 +14,7 @@
   font-size: 12px;
   
   outline: none;
-  margin: 0 auto;
+  margin: 2px auto 0;
   border: 1px solid rgba(0, 0, 0, .2);
   border-radius: 5px;
   padding: 13px 16px;
@@ -59,7 +59,7 @@
   
   display: block;
   
-  font-family: 'Inter', Tahoma, sans-serif;
+  font-family: 'Montserrat', Tahoma, sans-serif;
   color: #ff275b;
   font-size: 12px;
   font-weight: 200;
@@ -72,16 +72,17 @@
     font-size: 22px;
   }
   
-  .layout input::placeholder,
-  :global(.react-select__placeholder) {
-    font-size: 16px;
-  }
-  
   .layout input, textarea,
   :global(html, .react-select__control) {
     font-size: 16px;
     
+    margin: 2px auto;
     padding: 18px 28px;
+  }
+  
+  .layout input::placeholder,
+  :global(.react-select__placeholder) {
+    font-size: 16px;
   }
   
   .errorMessage {

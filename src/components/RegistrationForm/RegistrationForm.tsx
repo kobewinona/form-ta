@@ -2,11 +2,11 @@ import React from 'react';
 
 import registrationSchema from '../../utils/validation/schema/registrationSchema';
 
-import FormWithValidation from '../ui/FormWithValidation/FormWithValidation';
-import InputTypeText from '../ui/InputTypeText/InputTypeText';
-import InputTypeSelect from '../ui/InputTypeSelect/InputTypeSelect';
-import InputTypeDate from '../ui/InputTypeDate/InputTypeDate';
-import Textarea from '../ui/Textarea/Textarea';
+import Form from '../ui/Form/Form';
+import InputTypeText from '../ui/Inputs/InputTypeText/InputTypeText';
+import InputTypeSelect from '../ui/Inputs/InputTypeSelect/InputTypeSelect';
+import InputTypeDate from '../ui/Inputs/InputTypeDate/InputTypeDate';
+import Textarea from '../ui/Inputs/Textarea/Textarea';
 
 import styles from './RegistrationForm.module.css';
 
@@ -26,7 +26,7 @@ const RegistrationForm = () => {
   return (
     <section className={styles.layout}>
       <div className={styles.formContainer}>
-        <FormWithValidation
+        <Form
           name="registration"
           schema={registrationSchema}
           onSubmit={handleFormSubmit}
@@ -48,11 +48,11 @@ const RegistrationForm = () => {
                   <InputTypeSelect
                     name="gender"
                     label="Пол"
+                    placeholder="Выберите пол"
                     options={[
                       { value: 'male', label: 'Мужской' },
                       { value: 'female', label: 'Женский' }
                     ]}
-                    placeholder="Выберите пол"
                     required
                   />
                   <InputTypeDate
@@ -66,12 +66,13 @@ const RegistrationForm = () => {
             </li>
             <li>
               <h2 className={styles.formTabTitle}>Образование</h2>
-              <InputTypeText
-                name="academy"
-                label="ВУЗ"
-                placeholder="Выберите ВУЗ"
-                minLength={2}
-              />
+              <div className={styles.inputsContainer}>
+                <InputTypeText
+                  name="academy"
+                  label="ВУЗ"
+                  placeholder="Выберите ВУЗ"
+                />
+              </div>
             </li>
             <li>
               <h2 className={styles.formTabTitle}>Работа</h2>
@@ -88,7 +89,7 @@ const RegistrationForm = () => {
               </div>
             </li>
           </ul>
-        </FormWithValidation>
+        </Form>
       </div>
     </section>
   );

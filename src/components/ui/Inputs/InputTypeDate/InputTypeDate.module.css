@@ -10,7 +10,7 @@
   
   cursor: pointer;
   
-  background-image: url('../../../images/calendar.svg');
+  background-image: url('../../../../images/calendar.svg');
   background-size: auto;
   background-repeat: no-repeat;
   background-position: center;
@@ -57,7 +57,9 @@
 }
 
 :global(.react-datepicker__day-names) {
+  font-family: 'Montserrat', Tahoma, sans-serif;
   font-size: 12px;
+  font-weight: 600;
   
   margin-top: 10px;
 }
@@ -77,8 +79,8 @@
   width: 34px;
   height: 34px;
   
-  font-family: 'Inter', Tahoma, sans-serif;
-  font-weight: 400;
+  font-family: 'Montserrat', Tahoma, sans-serif;
+  font-weight: 600;
   vertical-align: middle;
   line-height: 34px;
   
@@ -96,7 +98,7 @@
 }
 
 :global(.react-datepicker__day--today) {
-  font-weight: 400;
+  font-weight: 600;
 }
 
 :global(.react-datepicker__day--selected) {

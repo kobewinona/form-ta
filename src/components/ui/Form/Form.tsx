@@ -5,7 +5,7 @@ import * as yup from 'yup';
 
 import Spinner from '../Spinner/Spinner';
 
-import styles from './FormWithValidation.module.css';
+import styles from './Form.module.css';
 
 interface FormWithValidationProps {
   name: string;
@@ -17,7 +17,7 @@ interface FormWithValidationProps {
 }
 
 
-const FormWithValidation: FC<FormWithValidationProps> = ({
+const Form: FC<FormWithValidationProps> = ({
   name,
   submitText = 'Сохранить',
   schema,
@@ -49,4 +49,4 @@ const FormWithValidation: FC<FormWithValidationProps> = ({
   )
 };
 
-export default FormWithValidation;
+export default Form;

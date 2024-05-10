@@ -8,7 +8,7 @@
   
   cursor: pointer;
   
-  background-image: url('../../../images/select-indicator.svg');
+  background-image: url('../../../../images/select-indicator.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: auto;
