@@ -3,6 +3,7 @@ import React, { FC } from 'react';
 import InputWrapper from '../InputWrapper/InputWrapper';
 
 import styles from './Textarea.module.css';
+import { useFormContext } from 'react-hook-form';
 
 interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   name: string;
@@ -16,15 +17,16 @@ const Textarea: FC<TextareaProps> = ({
   required = false,
   ...textareaHTMLAttributes
 }) => {
+  const { register } = useFormContext();
+
   return (
     <InputWrapper
       required={required}
       label={label}
-      inputErrorMessage={''}
     >
       <textarea
         className={styles.layout}
-        name={name}
+        {...register(name)}
         {...textareaHTMLAttributes}
       />
     </InputWrapper>

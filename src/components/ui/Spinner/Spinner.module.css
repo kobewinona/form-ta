@@ -7,7 +7,7 @@
   }
 }
 
-.spinner__container {
+.spinnerContainer {
   height: 45px;
   
   display: flex;
@@ -17,7 +17,7 @@
   margin: 28px auto 0 auto;
 }
 
-.spinner__wheel {
+.spinnerWheel {
   width: 22px;
   height: 22px;
   
@@ -29,13 +29,13 @@
 }
 
 @media (min-width: 520px) {
-  .spinner__container {
+  .spinnerContainer {
     height: 50px;
     
     margin-top: 15px;
   }
   
-  .spinner__wheel {
+  .spinnerWheel {
     width: 25px;
     height: 25px;
     

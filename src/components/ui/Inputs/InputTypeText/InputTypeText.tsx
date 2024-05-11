@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from 'react';
+import React, { FC } from 'react';
 import { useFormContext } from 'react-hook-form';
 
 import InputWrapper from '../InputWrapper/InputWrapper';
@@ -17,12 +17,12 @@ const InputTypeText: FC<InputTypeTextProps> = ({
   required = false,
   ...inputHTMLAttributes
 }) => {
-  const { register, formState: { errors } } = useFormContext();
+  const { register, setValue, formState: { errors } } = useFormContext();
   const inputErrorMessage = errors[name]?.message as string;
 
-  useEffect(() => {
-    console.log('inputErrorMessage', inputErrorMessage);
-  }, [inputErrorMessage]);
+  const handleBlur = (event: React.FocusEvent<HTMLInputElement>) => {
+    setValue(name, event.target.value.trim(), { shouldValidate: true });
+  };
 
   return (
     <>
@@ -38,6 +38,7 @@ const InputTypeText: FC<InputTypeTextProps> = ({
           required={required}
           {...register(name)}
           {...inputHTMLAttributes}
+          onBlur={handleBlur}
         />
       </InputWrapper>
     </>

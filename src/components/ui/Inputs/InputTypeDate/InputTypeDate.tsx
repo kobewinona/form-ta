@@ -38,6 +38,10 @@ const InputTypeDate: FC<InputTypeDateProps> = ({
     setValue(name, date, { shouldValidate: true });
   };
 
+  const handleBlur = () => {
+    setValue(name, selectedDate, { shouldValidate: true });
+  };
+
   useEffect(() => {
     register(name);
   }, [register, name]);
@@ -53,6 +57,7 @@ const InputTypeDate: FC<InputTypeDateProps> = ({
         selected={selectedDate}
         dateFormat="dd.MM.yyyy"
         onChange={handleChange}
+        onBlur={handleBlur}
         placeholderText={placeholder}
         maxDate={new Date()}
         required={required}
