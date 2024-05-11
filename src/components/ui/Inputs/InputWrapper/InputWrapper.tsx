@@ -23,7 +23,7 @@ const InputWrapper: FC<InputWrapperProps> = ({
   });
 
   return (
-    <label htmlFor={name} className={layoutClasses}>
+    <label htmlFor={`${name}-input`} className={layoutClasses}>
       {label && label}
       {required && <span className={styles.requiredLabel}>*</span>}
       {children}

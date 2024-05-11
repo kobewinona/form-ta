@@ -3,7 +3,10 @@ import '@testing-library/jest-dom';
 
 import { SelectOption } from './types/types';
 
+global.alert = jest.fn();
+
 interface MockSelectProps {
+  name: string;
   options: SelectOption[];
   onChange: (option: SelectOption) => void;
   value: string | number;
@@ -11,8 +14,9 @@ interface MockSelectProps {
 
 jest.mock('react-select', () => ({
   __esModule: true,
-  default: ({ options, onChange, value }: MockSelectProps) => (
+  default: ({ name, options, onChange, value }: MockSelectProps) => (
     <select
+      data-testid={`${name}-test`}
       value={value}
       onChange={e => {
         onChange({
@@ -29,3 +33,27 @@ jest.mock('react-select', () => ({
     </select>
   ),
 }));
+
+interface MockDateProps {
+  name: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  value: string | number;
+}
+
+jest.mock('react-datepicker', () => {
+  const OriginalReactDatepicker = jest.requireActual('react-datepicker');
+  return {
+    __esModule: true,
+    ...OriginalReactDatepicker,
+    default: ({ name, onChange, value }: MockDateProps) => (
+      <input
+        data-testid={`${name}-test`}
+        type='date'
+        value={value}
+        onChange={e => onChange(e)}
+      />
+    ),
+    registerLocale: jest.fn(),
+    setDefaultLocale: jest.fn(),
+  };
+});

@@ -1,8 +1,7 @@
 import React, { FC, useEffect } from 'react';
-import DatePicker from 'react-datepicker';
+import DatePicker, { registerLocale, setDefaultLocale } from 'react-datepicker';
 import { useFormContext } from 'react-hook-form';
 import 'react-datepicker/dist/react-datepicker.css';
-import { registerLocale, setDefaultLocale } from 'react-datepicker';
 import ru from 'date-fns/locale/ru';
 
 import InputWrapper from '../InputWrapper/InputWrapper';
@@ -55,7 +54,7 @@ const InputTypeDate: FC<InputTypeDateProps> = ({
       inputErrorMessage={inputErrorMessage}
     >
       <DatePicker
-        id={name}
+        id={`${name}-input`}
         name={name}
         selected={selectedDate}
         dateFormat='dd.MM.yyyy'

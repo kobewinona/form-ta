@@ -38,7 +38,8 @@ const InputTypeText: FC<InputTypeTextProps> = ({
         inputErrorMessage={inputErrorMessage}
       >
         <input
-          id={name}
+          data-testid={`${name}-test`}
+          id={`${name}-input`}
           className={extraClass}
           type='text'
           required={required}

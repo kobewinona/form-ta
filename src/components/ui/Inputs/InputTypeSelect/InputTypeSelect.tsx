@@ -53,7 +53,7 @@ const InputTypeSelect: FC<InputTypeSelectProps> = ({
       inputErrorMessage={inputErrorMessage}
     >
       <Select
-        inputId={name}
+        inputId={`${name}-input`}
         classNamePrefix='react-select'
         name={name}
         options={options}
