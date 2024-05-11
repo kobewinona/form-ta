@@ -61,8 +61,7 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,css,scss,json}": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ]
   }
 }
