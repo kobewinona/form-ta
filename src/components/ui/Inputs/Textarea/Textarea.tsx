@@ -21,7 +21,7 @@ const Textarea: FC<TextareaProps> = ({
   const { register } = useFormContext();
 
   return (
-    <InputWrapper required={required} label={label}>
+    <InputWrapper name={name} required={required} label={label}>
       <textarea
         className={styles.layout}
         {...register(name)}

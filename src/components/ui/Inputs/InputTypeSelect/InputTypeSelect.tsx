@@ -47,12 +47,13 @@ const InputTypeSelect: FC<InputTypeSelectProps> = ({
 
   return (
     <InputWrapper
+      name={name}
       required={required}
       label={label}
       inputErrorMessage={inputErrorMessage}
     >
       <Select
-        inputId='my-custom-input-id'
+        inputId={name}
         classNamePrefix='react-select'
         name={name}
         options={options}

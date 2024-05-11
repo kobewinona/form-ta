@@ -4,6 +4,7 @@ import classNames from 'classnames';
 import styles from './InputWrapper.module.css';
 
 interface InputWrapperProps {
+  name: string;
   required: boolean;
   label?: string;
   inputErrorMessage?: string;
@@ -11,6 +12,7 @@ interface InputWrapperProps {
 }
 
 const InputWrapper: FC<InputWrapperProps> = ({
+  name,
   required,
   label,
   inputErrorMessage = '',
@@ -21,7 +23,7 @@ const InputWrapper: FC<InputWrapperProps> = ({
   });
 
   return (
-    <label className={layoutClasses}>
+    <label htmlFor={name} className={layoutClasses}>
       {label && label}
       {required && <span className={styles.requiredLabel}>*</span>}
       {children}

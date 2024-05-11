@@ -49,11 +49,13 @@ const InputTypeDate: FC<InputTypeDateProps> = ({
 
   return (
     <InputWrapper
+      name={name}
       required={required}
       label={label}
       inputErrorMessage={inputErrorMessage}
     >
       <DatePicker
+        id={name}
         name={name}
         selected={selectedDate}
         dateFormat='dd.MM.yyyy'

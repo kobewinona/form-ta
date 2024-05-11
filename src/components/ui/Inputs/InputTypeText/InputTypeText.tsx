@@ -32,13 +32,14 @@ const InputTypeText: FC<InputTypeTextProps> = ({
   return (
     <>
       <InputWrapper
+        name={name}
         required={required}
         label={label}
         inputErrorMessage={inputErrorMessage}
       >
         <input
-          className={extraClass}
           id={name}
+          className={extraClass}
           type='text'
           required={required}
           {...register(name)}
