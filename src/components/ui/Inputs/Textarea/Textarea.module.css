@@ -1,9 +1,9 @@
 .layout {
   width: 100%;
   min-height: 114px;
-  
+
   font-size: 12px;
-  
+
   resize: none;
 }
 
@@ -16,7 +16,7 @@
   .layout {
     font-size: 16px;
   }
-  
+
   .layout::placeholder {
     font-size: 16px;
   }

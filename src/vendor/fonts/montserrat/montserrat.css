@@ -3,7 +3,7 @@
   font-style: normal;
   font-weight: 100;
   font-display: swap;
-  src: url('Montserrat-Thin.ttf') format('ttf')
+  src: url('Montserrat-Thin.ttf') format('ttf');
 }
 
 @font-face {
@@ -11,7 +11,7 @@
   font-style: normal;
   font-weight: 200;
   font-display: swap;
-  src: url('Montserrat-ExtraLight.ttf') format('woff2')
+  src: url('Montserrat-ExtraLight.ttf') format('woff2');
 }
 
 @font-face {
@@ -19,7 +19,7 @@
   font-style: normal;
   font-weight: 300;
   font-display: swap;
-  src: url('Montserrat-Light.ttf') format('ttf')
+  src: url('Montserrat-Light.ttf') format('ttf');
 }
 
 @font-face {
@@ -27,7 +27,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('Montserrat-Regular.ttf') format('woff2')
+  src: url('Montserrat-Regular.ttf') format('woff2');
 }
 
 @font-face {
@@ -35,7 +35,7 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url('Montserrat-Medium.ttf') format('woff2')
+  src: url('Montserrat-Medium.ttf') format('woff2');
 }
 
 @font-face {
@@ -43,7 +43,7 @@
   font-style: normal;
   font-weight: 600;
   font-display: swap;
-  src: url('Montserrat-SemiBold.ttf') format('woff2')
+  src: url('Montserrat-SemiBold.ttf') format('woff2');
 }
 
 @font-face {
@@ -51,7 +51,7 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url('Montserrat-Bold.ttf') format('woff2')
+  src: url('Montserrat-Bold.ttf') format('woff2');
 }
 
 @font-face {
@@ -59,7 +59,7 @@
   font-style: normal;
   font-weight: 800;
   font-display: swap;
-  src: url('Montserrat-ExtraBold.ttf') format('woff2')
+  src: url('Montserrat-ExtraBold.ttf') format('woff2');
 }
 
 @font-face {
@@ -67,5 +67,5 @@
   font-style: normal;
   font-weight: 900;
   font-display: swap;
-  src: url('Montserrat-Black.ttf') format('woff2')
+  src: url('Montserrat-Black.ttf') format('woff2');
 }

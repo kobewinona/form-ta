@@ -16,11 +16,15 @@ const CalendarCustomHeader: FC<CalendarCustomHeaderProps> = ({
   decreaseMonth,
   increaseMonth,
   prevMonthButtonDisabled,
-  nextMonthButtonDisabled
+  nextMonthButtonDisabled,
 }) => {
   const locale = document.documentElement.lang || 'en-US';
-  const month = date ? new Intl.DateTimeFormat(locale, { month: 'long' }).format(date) : '';
-  const year = date ? new Intl.DateTimeFormat(locale, { year: 'numeric' }).format(date) : '';
+  const month = date
+    ? new Intl.DateTimeFormat(locale, { month: 'long' }).format(date)
+    : '';
+  const year = date
+    ? new Intl.DateTimeFormat(locale, { year: 'numeric' }).format(date)
+    : '';
 
   const arrowLeftClasses = classNames(styles.arrowBtn, styles.arrowBtnLeft);
   const arrowRightClasses = classNames(styles.arrowBtn, styles.arrowBtnRight);
@@ -29,18 +33,20 @@ const CalendarCustomHeader: FC<CalendarCustomHeaderProps> = ({
     <div className={styles.layout}>
       <button
         className={arrowLeftClasses}
-        type="button"
+        type='button'
         onClick={decreaseMonth}
         disabled={prevMonthButtonDisabled}
       />
       <span className={styles.monthYear}>
-        {month}<span className={styles.year}>{`, ${year}`}</span>
+        {month}
+        <span className={styles.year}>{`, ${year}`}</span>
       </span>
       <button
         className={arrowRightClasses}
-        type="button"
+        type='button'
         onClick={increaseMonth}
-        disabled={nextMonthButtonDisabled} />
+        disabled={nextMonthButtonDisabled}
+      />
     </div>
   );
 };

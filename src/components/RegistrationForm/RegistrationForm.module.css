@@ -17,9 +17,9 @@
   width: 100%;
   max-width: 745px;
   box-sizing: border-box;
-  
+
   background-color: #fff;
-  
+
   margin: 14px auto 0;
   border-radius: 20px 20px 0 0;
   padding: 16px 18px;
@@ -27,7 +27,7 @@
 
 .formTabs {
   list-style: none;
-  
+
   display: flex;
   flex-direction: column;
   row-gap: 43px;
@@ -38,7 +38,7 @@
 .formTabTitle {
   font-size: clamp(16px, 3vw, 26px);
   font-weight: 700;
-  
+
   margin: 0 0 14px;
 }
 
@@ -58,7 +58,7 @@
 
 .twoInputsContainer {
   width: 100%;
-  
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -69,25 +69,25 @@
   .title {
     margin-bottom: 32px;
   }
-  
+
   .formContainer {
     margin: 40px;
-    
+
     border-radius: 20px;
     padding: 31px 45px 33px;
   }
-  
+
   .formTabs {
     row-gap: 39px;
   }
-  
+
   .formTabTitle {
     margin-bottom: 16px;
   }
-  
+
   .twoInputsContainer {
     width: 100%;
-    
+
     flex-direction: row;
     column-gap: 14px;
   }

@@ -1,21 +1,22 @@
 .layout {
   width: 100%;
-  
+
   font-size: 16px;
-  
+
   margin-bottom: 1px;
 }
 
-.layout input, textarea,
+.layout input,
+textarea,
 :global(html, .react-select__control) {
   width: 100%;
   box-sizing: border-box;
-  
+
   font-size: 12px;
-  
+
   outline: none;
   margin: 2px auto 0;
-  border: 1px solid rgba(0, 0, 0, .2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   padding: 13px 16px;
 }
@@ -23,7 +24,7 @@
 :global(html, .react-select__control):hover {
   outline: none;
   box-shadow: none;
-  border: 1px solid rgba(0, 0, 0, .2);
+  border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 :global(html, .react-select__control--is-focused) {
@@ -44,7 +45,7 @@
 :global(.react-select__placeholder) {
   font-size: 12px;
   font-weight: 200;
-  
+
   margin: 0;
 }
 
@@ -56,14 +57,14 @@
 .errorMessage {
   height: fit-content;
   min-height: 18px;
-  
+
   display: block;
-  
+
   font-family: 'Montserrat', Tahoma, sans-serif;
   color: #ff275b;
   font-size: 12px;
   font-weight: 200;
-  
+
   margin: 0;
 }
 
@@ -71,23 +72,24 @@
   .layout {
     font-size: 22px;
   }
-  
-  .layout input, textarea,
+
+  .layout input,
+  textarea,
   :global(html, .react-select__control) {
     font-size: 16px;
-    
+
     margin: 2px auto;
     padding: 18px 28px;
   }
-  
+
   .layout input::placeholder,
   :global(.react-select__placeholder) {
     font-size: 16px;
   }
-  
+
   .errorMessage {
     font-size: 16px;
-    
+
     margin-top: 3px;
   }
 }

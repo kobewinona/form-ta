@@ -3,7 +3,8 @@ import { useFormContext } from 'react-hook-form';
 
 import InputWrapper from '../InputWrapper/InputWrapper';
 
-interface InputTypeTextProps extends React.InputHTMLAttributes<HTMLInputElement> {
+interface InputTypeTextProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {
   name: string;
   label?: string;
   extraClass?: string;
@@ -13,11 +14,15 @@ interface InputTypeTextProps extends React.InputHTMLAttributes<HTMLInputElement>
 const InputTypeText: FC<InputTypeTextProps> = ({
   name,
   label,
-  extraClass= '',
+  extraClass = '',
   required = false,
   ...inputHTMLAttributes
 }) => {
-  const { register, setValue, formState: { errors } } = useFormContext();
+  const {
+    register,
+    setValue,
+    formState: { errors },
+  } = useFormContext();
   const inputErrorMessage = errors[name]?.message as string;
 
   const handleBlur = (event: React.FocusEvent<HTMLInputElement>) => {
@@ -34,7 +39,7 @@ const InputTypeText: FC<InputTypeTextProps> = ({
         <input
           className={extraClass}
           id={name}
-          type="text"
+          type='text'
           required={required}
           {...register(name)}
           {...inputHTMLAttributes}

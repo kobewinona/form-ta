@@ -6,8 +6,10 @@ import { components, IndicatorProps } from 'react-select';
 
 import styles from './DropdownIndicator.module.css';
 
-const DropdownIndicator: FC<IndicatorProps> = ({...props}) => {
-  const { selectProps: { menuIsOpen } } = props;
+const DropdownIndicator: FC<IndicatorProps> = ({ ...props }) => {
+  const {
+    selectProps: { menuIsOpen },
+  } = props;
 
   const dropdownIndicatorClasses = classNames(styles.layout, {
     [styles.arrowUp]: menuIsOpen,

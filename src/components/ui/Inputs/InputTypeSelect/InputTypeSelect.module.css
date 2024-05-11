@@ -1,6 +1,6 @@
 :global(html, .react-select__value-container) {
   font-weight: 400;
-  
+
   padding: 0;
 }
 
@@ -21,16 +21,16 @@
 :global(html .react-select__option--is-selected) {
   color: #000;
   font-size: 12px;
-  
+
   background-color: rgba(217, 217, 217, 0.15);
 }
 
 :global(html .react-select__option--is-focused) {
   cursor: pointer;
-  
+
   color: #fff;
   font-size: 12px;
-  
+
   background-color: #5ccb81;
 }
 
@@ -39,11 +39,11 @@
     font-size: 16px;
     font-weight: 300;
   }
-  
+
   :global(html .react-select__option--is-selected) {
     font-size: 16px;
   }
-  
+
   :global(html .react-select__option--is-focused) {
     font-size: 16px;
   }

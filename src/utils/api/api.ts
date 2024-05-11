@@ -1,8 +1,9 @@
 import { apiConfig, setRequest, returnRes } from './apiConfig';
 
-export const getRandomName = () => {
-  return setRequest(apiConfig['url'], {
+export const getRandomName = async () => {
+  const res = await setRequest(apiConfig['url'], {
     method: 'GET',
-    ...apiConfig
-  }).then(res => returnRes(res));
+    ...apiConfig,
+  });
+  return await returnRes(res);
 };

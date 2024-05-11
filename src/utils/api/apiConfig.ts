@@ -1,18 +1,11 @@
-interface ApiConfig {
-  url?: string;
-  method: 'GET' | 'POST' | 'PATCH' | 'DELETE';
-  headers: {
-    Accept: string;
-    'Content-Type': string;
-  };
-}
+import { ApiConfig } from '../../types/types';
 
 export const apiConfig = {
   url: 'https://randomuser.me/api',
   headers: {
-    'Accept': 'application/json',
-    'Content-Type': 'application/json'
-  }
+    Accept: 'application/json',
+    'Content-Type': 'application/json',
+  },
 };
 
 export const setRequest = (url: string, config: ApiConfig) => {

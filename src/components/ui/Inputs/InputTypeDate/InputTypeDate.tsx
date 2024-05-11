@@ -1,7 +1,7 @@
 import React, { FC, useEffect } from 'react';
 import DatePicker from 'react-datepicker';
 import { useFormContext } from 'react-hook-form';
-import "react-datepicker/dist/react-datepicker.css";
+import 'react-datepicker/dist/react-datepicker.css';
 import { registerLocale, setDefaultLocale } from 'react-datepicker';
 import ru from 'date-fns/locale/ru';
 
@@ -23,14 +23,15 @@ interface InputTypeDateProps {
 const InputTypeDate: FC<InputTypeDateProps> = ({
   name,
   label,
-  placeholder= '',
-  required = false
+  placeholder = '',
+  required = false,
 }) => {
   const {
     register,
     setValue,
     watch,
-    formState: { errors } } = useFormContext();
+    formState: { errors },
+  } = useFormContext();
   const selectedDate = watch(name);
   const inputErrorMessage = errors[name]?.message as string;
 
@@ -55,7 +56,7 @@ const InputTypeDate: FC<InputTypeDateProps> = ({
       <DatePicker
         name={name}
         selected={selectedDate}
-        dateFormat="dd.MM.yyyy"
+        dateFormat='dd.MM.yyyy'
         onChange={handleChange}
         onBlur={handleBlur}
         placeholderText={placeholder}
@@ -66,7 +67,7 @@ const InputTypeDate: FC<InputTypeDateProps> = ({
           decreaseMonth,
           increaseMonth,
           prevMonthButtonDisabled,
-          nextMonthButtonDisabled
+          nextMonthButtonDisabled,
         }) => (
           <CalendarCustomHeader
             date={date}

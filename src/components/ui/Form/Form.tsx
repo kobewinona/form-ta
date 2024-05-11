@@ -16,7 +16,6 @@ interface FormWithValidationProps {
   children: ReactNode;
 }
 
-
 const Form: FC<FormWithValidationProps> = ({
   name,
   submitText = 'Сохранить',
@@ -30,23 +29,22 @@ const Form: FC<FormWithValidationProps> = ({
     resolver: yupResolver(schema),
   });
 
-  const handleSubmit = methods.handleSubmit((data) => onSubmit(data));
+  const handleSubmit = methods.handleSubmit(data => onSubmit(data));
 
   return (
     <FormProvider {...methods}>
       <form name={name} onSubmit={handleSubmit} noValidate>
         {children}
-        {isLoading
-          ? <Spinner />
-          : <button
-            className={styles.submitBtn}
-            type="submit"
-            name="submit"
-          >{submitText}</button>
-        }
+        {isLoading ? (
+          <Spinner />
+        ) : (
+          <button className={styles.submitBtn} type='submit' name='submit'>
+            {submitText}
+          </button>
+        )}
       </form>
     </FormProvider>
-  )
+  );
 };
 
 export default Form;

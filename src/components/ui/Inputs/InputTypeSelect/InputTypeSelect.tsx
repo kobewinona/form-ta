@@ -2,20 +2,17 @@ import React, { FC, useEffect } from 'react';
 import { useFormContext } from 'react-hook-form';
 import Select from 'react-select';
 
+import { SelectOption } from '../../../../types/types';
+
 import InputWrapper from '../InputWrapper/InputWrapper';
 
 import DropdownIndicator from './DropdownIndicator';
 import styles from './InputTypeSelect.module.css';
 
-interface Option {
-  value: string;
-  label: string;
-}
-
 interface InputTypeSelectProps {
   name: string;
   label?: string;
-  options: Option[];
+  options: SelectOption[];
   placeholder?: string;
   required?: boolean;
 }
@@ -24,18 +21,19 @@ const InputTypeSelect: FC<InputTypeSelectProps> = ({
   name,
   label,
   options,
-  placeholder= '',
+  placeholder = '',
   required = false,
 }) => {
   const {
     register,
     watch,
     setValue,
-    formState: { errors } } = useFormContext();
+    formState: { errors },
+  } = useFormContext();
   const selectedOption = watch(name);
   const inputErrorMessage = errors[name]?.message as string;
 
-  const handleChange = (option: Option | null) => {
+  const handleChange = (option: SelectOption | null) => {
     setValue(name, option?.value || '', { shouldValidate: true });
   };
 
@@ -54,8 +52,8 @@ const InputTypeSelect: FC<InputTypeSelectProps> = ({
       inputErrorMessage={inputErrorMessage}
     >
       <Select
-        inputId="my-custom-input-id"
-        classNamePrefix="react-select"
+        inputId='my-custom-input-id'
+        classNamePrefix='react-select'
         name={name}
         options={options}
         placeholder={placeholder}
@@ -65,8 +63,8 @@ const InputTypeSelect: FC<InputTypeSelectProps> = ({
         styles={styles}
         components={{
           IndicatorSeparator: () => null,
-          DropdownIndicator: DropdownIndicator
-      }}
+          DropdownIndicator: DropdownIndicator,
+        }}
       />
     </InputWrapper>
   );

@@ -4,13 +4,6 @@
   "private": true,
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",
-    "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
-    "@types/node": "^16.18.96",
-    "@types/react": "^18.3.1",
-    "@types/react-dom": "^18.3.0",
     "classnames": "^2.5.1",
     "date-fns": "^2.30.0",
     "moment": "^2.30.1",
@@ -20,7 +13,6 @@
     "react-hook-form": "^7.51.4",
     "react-scripts": "^5.0.1",
     "react-select": "^5.8.0",
-    "typescript": "^4.9.5",
     "web-vitals": "^2.1.4",
     "yup": "^1.4.0"
   },
@@ -48,8 +40,29 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@testing-library/jest-dom": "^6.4.5",
+    "@testing-library/react": "^15.0.7",
+    "@testing-library/user-event": "^14.5.2",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.12.11",
+    "@types/react": "^18.3.1",
     "@types/react-datepicker": "^6.2.0",
+    "@types/react-dom": "^18.3.0",
     "eslint": "^8.57.0",
-    "prettier": "^3.2.5"
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5",
+    "typescript": "^5.4.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,css,scss,json}": [
+      "prettier --write",
+      "git add"
+    ]
   }
 }
