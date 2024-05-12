@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from 'react';
+import React, { FC, useEffect, useRef } from 'react';
 import { useFormContext } from 'react-hook-form';
 import Select from 'react-select';
 
@@ -33,6 +33,8 @@ const InputTypeSelect: FC<InputTypeSelectProps> = ({
   const selectedOption = watch(name);
   const inputErrorMessage = errors[name]?.message as string;
 
+  const selectRef = useRef(null);
+
   const handleChange = (option: SelectOption | null) => {
     setValue(name, option?.value || '', { shouldValidate: true });
   };
@@ -53,6 +55,7 @@ const InputTypeSelect: FC<InputTypeSelectProps> = ({
       inputErrorMessage={inputErrorMessage}
     >
       <Select
+        ref={selectRef}
         inputId={`${name}-input`}
         classNamePrefix='react-select'
         name={name}
@@ -60,6 +63,7 @@ const InputTypeSelect: FC<InputTypeSelectProps> = ({
         placeholder={placeholder}
         onChange={handleChange}
         onBlur={handleBlur}
+        blurInputOnSelect={false}
         required={required}
         styles={styles}
         components={{
